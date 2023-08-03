@@ -1,0 +1,1 @@
+SELECT lessons FROM lessons WHERE lecturer_id = 3

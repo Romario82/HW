@@ -1,0 +1,1 @@
+SELECT lessons.lessons FROM grades INNER JOIN lessons ON lessons.id = grades.lessons_id WHERE grades.student_id = 10

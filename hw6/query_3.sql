@@ -1,0 +1,1 @@
+SELECT groups.groups, AVG(grades.grade) AS avg_grade FROM grades INNER JOIN students ON students.id = grades.student_id INNER JOIN groups ON students.group_id = groups.id WHERE grades.lessons_id = 2 GROUP BY groups.groups;

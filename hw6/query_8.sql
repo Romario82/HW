@@ -1,0 +1,1 @@
+SELECT AVG(grades.grade) AS avg_grade, lessons.lessons AS subject_name, lecturer.lecturer AS lecturer_name FROM grades INNER JOIN lessons ON lessons.id = grades.lessons_id INNER JOIN lecturer ON lessons.lecturer_id = lecturer.id WHERE lessons.lecturer_id = 1;
