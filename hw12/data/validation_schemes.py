@@ -18,17 +18,23 @@ class Contact_out(BaseModel):
     phone: str
     birthday: str
     text: str = None
-    id_user: int
+
 
     class Config:
         from_attributes = True
 
-class User_in(BaseModel):
-    username: str
+class UserModel(BaseModel):
+    email: str
     password: str
 
 
-class User_out(BaseModel):
+
+class UserResponse(BaseModel):
     id: int
-    username: str
+    mail: str
     password: str
+
+class TokenModel(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: str = "bearer"
