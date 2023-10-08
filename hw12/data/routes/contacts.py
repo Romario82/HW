@@ -9,11 +9,11 @@ from data.auth.auth import auth_service
 
 router = APIRouter(prefix="/contact", tags=["contacts"])
 
-@router.post("/", response_model = Contact_out)
+@router.post("/", response_model = Contact_out, status_code=status.HTTP_201_CREATED)
 async def add_contacts(contact: Contact_in, db: Session = Depends(get_db), current_user: User = Depends(auth_service.get_current_user)):
     return await oper_contact.add_contact(contact, current_user, db)
 
-@router.put("/{id_contact}", response_model = Contact_out, tags=['contacts'])
+@router.put("/{id_contact}", response_model = Contact_out, tags=['contacts'], status_code=status.HTTP_201_CREATED)
 async def update_contact(contact: Contact_in, id_contact: int, db: Session = Depends(get_db), current_user: User = Depends(auth_service.get_current_user)):
     up_contact = oper_contact.update_contact(contact, id_contact, current_user, db)
     if up_contact is None:
