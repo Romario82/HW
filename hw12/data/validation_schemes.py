@@ -19,7 +19,6 @@ class Contact_out(BaseModel):
     birthday: str
     text: str = None
 
-
     class Config:
         from_attributes = True
 
@@ -27,12 +26,18 @@ class UserModel(BaseModel):
     email: str
     password: str
 
+class UserDb(BaseModel):
+    id: int
+    email: str
+
+    class Config:
+        orm_mode = True
 
 
 class UserResponse(BaseModel):
-    id: int
-    mail: str
-    password: str
+    user: UserDb
+    detail: str = "User successfully created"
+
 
 class TokenModel(BaseModel):
     access_token: str

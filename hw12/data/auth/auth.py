@@ -8,8 +8,7 @@ from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from data.db.connect_db import get_db
 from data.operations import users as repository_users
-#from src.database.db import get_db
-#from src.repository import users as repository_users
+
 
 
 class Auth:
